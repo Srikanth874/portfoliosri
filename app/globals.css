@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050816;
+  --surface: #0d1117;
+  --surface-alt: #0a0f24;
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: #f1f5f9;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: white;
+}
+
+/* Font classes */
+.font-sans {
+  font-family: var(--font-inter);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Smooth focus rings */
+:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.7);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Prevent layout shift from particle canvas */
+canvas {
+  display: block;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #818cf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism base */
+.glass {
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  z-index: 999;
+  transform-origin: left;
+}
